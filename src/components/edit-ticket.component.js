@@ -27,7 +27,7 @@ constructor(props){
 }
 
 componentDidMount(){
-    axios.get('http://localhost:5000/tickets/'+this.props.match.params.id)
+    axios.get('https://imeinterx.herokuapp.com/tickets/'+this.props.match.params.id)
         .then(response=>{
             this.setState({
                 username:response.data.username,
@@ -43,7 +43,7 @@ componentDidMount(){
             console.log(error)
         })
 
-    axios.get('http://localhost:5000/users/')
+    axios.get('https://imeinterx.herokuapp.com/users/')
     .then(response=>{
         if(response.data.length>0){
             this.setState({
@@ -111,7 +111,7 @@ onSubmit(e){
 
     console.log(ticket)
 
-    axios.post('http://localhost:5000/tickets/update/'+this.props.match.params.id, ticket)
+    axios.post('https://imeinterx.herokuapp.com/tickets/update/'+this.props.match.params.id, ticket)
         .then(res=>console.log(res.data));
 
 

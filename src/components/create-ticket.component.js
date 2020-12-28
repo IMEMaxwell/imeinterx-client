@@ -27,7 +27,7 @@ constructor(props){
 }
 
 componentDidMount(){
-    axios.get('http://localhost:5000/users/')
+    axios.get('https://imeinterx.herokuapp.com/users/')
     .then(response=>{
         if(response.data.length>0){
             this.setState({
@@ -95,7 +95,7 @@ onSubmit(e){
 
     console.log(ticket)
 
-    axios.post('http://localhost:5000/tickets/add', ticket)
+    axios.post('https://imeinterx.herokuapp.com/tickets/add', ticket)
     .then(res=>console.log(res.data));
 
 
