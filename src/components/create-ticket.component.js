@@ -96,10 +96,9 @@ onSubmit(e){
     console.log(ticket)
 
     axios.post('https://imeinterx.herokuapp.com/tickets/add', ticket)
-    .then(res=>console.log(res.data));
-
-
-    window.location='/';
+    .then(res=>{
+        console.log(res.data)
+        window.location='/'})
 }
 
     render(){
