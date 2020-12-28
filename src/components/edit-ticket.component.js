@@ -112,10 +112,9 @@ onSubmit(e){
     console.log(ticket)
 
     axios.post('https://imeinterx.herokuapp.com/tickets/update/'+this.props.match.params.id, ticket)
-        .then(res=>console.log(res.data));
-
-
-    window.location='/';
+        .then(res=>{
+            window.location='/';
+            console.log(res.data)});
 }
 
     render(){
